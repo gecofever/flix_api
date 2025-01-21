@@ -7,8 +7,8 @@ class Review(models.Model):
     stars = models.IntegerField(
         validators=[MinValueValidator(0, 'Nota não pode ser inferior a Zero.'),
                     MaxValueValidator(5, 'Nota não pode ser superior a Cinco.')]
-        )
+    )
     comment = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.movie
+        return str(self.movie)
