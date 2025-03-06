@@ -24,7 +24,7 @@ class GenreCreateListView(generics.ListCreateAPIView):
 #         return JsonResponse({'id': new_genre.id, 'name': new_genre.name}, status=201,)
 
 class GenreRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, GenrePermissionClass,)
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
 
